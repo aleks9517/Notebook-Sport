@@ -1,0 +1,76 @@
+﻿@model Notebook.Models.Sport
+
+<h2>Add Sport</h2>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" asp-controller="Sport">
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label asp-for="TrainingId" class="control-label"></label>
+                </div>
+                <div class="col-md-3">
+                    <select asp-for="TrainingId" class="form-control" asp-items="ViewBag.Tags"></select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label asp-for="Start" class="control-label"></label>
+                </div>
+                <div class="col-md-3">
+                    <input asp-for="Start" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <span asp-validation-for="Start" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label asp-for="Approaches" class="control-label"></label>
+                </div>
+                <div class="col-md-3">
+                    <input asp-for="Approaches" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <span asp-validation-for="Approaches" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label asp-for="Quantity" class="control-label"></label>
+                </div>
+                <div class="col-md-3">
+                    <input asp-for="Quantity" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label asp-for="AllTime" class="control-label"></label>
+                </div>
+                <div class="col-md-3">
+                    <input asp-for="AllTime" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <span asp-validation-for="AllTime" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-1" >
+                    <input type="submit" value="save" class="btn btn-success" />
+                </div>
+                <div class="col-md-1">
+                    <a asp-action="Index" class="btn btn-info">Go to Index</a>
+                </div>
+                <div class="col-md-1">
+                    <a asp-action="Details" class="btn btn-info">Go to Details</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

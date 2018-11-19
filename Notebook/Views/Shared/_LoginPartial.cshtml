@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Notebook.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+<form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+    <div class="btn-group nav navbar-nav navbar-right">
+        <button type="button" class="btn btn-link navbar-btn top_profile_mrow dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="user" asp-area="" asp-controller="Manage" asp-action="Index" title="Manage"> @UserManager.GetUserName(User)</a>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="top_profile_mrow " asp-area="" asp-controller="Gallery" asp-action="Index">Gallery</a></li>
+            <li><a class="top_profile_mrow " asp-area="" asp-controller="Profile" asp-action="Details">Profile</a></li>
+            <li><a class="top_profile_mrow" asp-area="" asp-controller="Setting" asp-action="Index">Setting</a></li>
+            <li role="separator" class="divider"></li>
+            <li><button type="submit" class="btn btn-block btn-danger btn-radius">Log out</button></li>
+        </ul>
+    </div>
+</form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+}
+
+@*@if (User.IsInRole("admin"))
+{*@
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <a asp-controller="Admin" asp-action="Index" class="btn btn-link">Admin</a>
+        </li>
+    </ul>
+@*}*@

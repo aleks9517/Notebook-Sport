@@ -1,0 +1,12 @@
+﻿.top_profile_mrow {
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    color: #2a5885;
+}
+.user {
+    color: #2a5885;
+}

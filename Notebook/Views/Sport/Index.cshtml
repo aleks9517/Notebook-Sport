@@ -1,0 +1,41 @@
+﻿@model Notebook.ViewModels.ViewModelSport
+@{
+    var XLabels = Newtonsoft.Json.JsonConvert.SerializeObject(Model.Trainings);
+    var YValues = Newtonsoft.Json.JsonConvert.SerializeObject(Model.Sports);
+
+    ViewData["Title"] = "Pie Chart";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top-buffer col-md-2">
+                <a asp-action="Details" class="btn btn-block btn-info">My informations</a>
+            </div>
+            <div class="col-md-4 col-md-offset-2 text-center"><h3> Statistics of all users</h3></div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="chart-container">
+            <canvas id="chart" style="width:500px; height:500px"></canvas>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/js/Pie.js"></script>
+
+<script type="text/javascript">
+    var chartName = 'chart';
+
+    var ctx = document.getElementById(chartName).getContext('2d');
+    var params = createChartParams(@Html.Raw(XLabels), @Html.Raw(YValues))
+
+    var chart = new Chart(ctx, params);
+</script>

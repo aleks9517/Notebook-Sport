@@ -1,0 +1,84 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+.gallery-content{
+    padding: 24px;
+}
+
+.gallery-image {
+    height: 240px;
+    width: 280px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gallery-image-container {
+    padding: 8px;
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 260px;
+    width: 300px;
+    margin: 12px;
+    position: relative;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.button {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+    border: none;
+    background: url(/images/icons8-удалить-32.png);
+}
+
+.button:hover {
+    opacity: 1;
+
+}
+
+.image-detail {
+    height: 240px;
+    width: 280px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

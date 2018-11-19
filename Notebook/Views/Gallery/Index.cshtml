@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Notebook.Models.Gallery>
+@{
+    ViewData["Title"] = "Add Photo";
+}
+<div class="row">
+    <h3>Add Photo</h3>
+    <form asp-action="Edit" asp-controller="Gallery" method="post" enctype="multipart/form-data">
+        <label class="btn btn-default btn-file"> Search
+            <input type="file" name="UrlFile" style="display: none;" />
+        </label>
+        <input type="submit" class="btn btn-default" value="Download" />
+    </form>
+</div>
+
+<div class="container body-content">
+    <div class="row gallery-content">
+        @foreach (var image in Model)
+        {
+        <div class="gallery-image-container">
+            <a asp-controller="Gallery" asp-action="Details" asp-route-Id="@image.Id">
+                <img class="gallery-image" src="~/galleryphoto/@image.UserName/@Url.Content(image.Url)" />
+                <div>
+                    <form asp-controller="Gallery" asp-action="DeletePhoto" method="post" asp-route-Id="@image.Id">
+                        <div>
+                            <input type="submit" class="button" value=""/>
+                        </div>
+                    </form>
+                </div>
+            </a>
+        </div>
+        }
+    </div>
+</div>
+

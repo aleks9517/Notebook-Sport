@@ -1,0 +1,17 @@
+﻿@model Notebook.ViewModels.GalleryDetailModel
+
+<div class="col-md-12 container body-content">
+    <div class="row col-md-10">
+        <div class="col-md-offset-2">
+            <img src="~/galleryphoto/@Model.User/@Model.Url" alt="@Model.Title" class="img-responsive" />
+        </div>
+        <div class="col-md-offset-2">
+            <a class="btn btn-primary" asp-controller="Gallery" asp-action="Index">
+                Back to Gallery
+            </a>
+            <span>Title: @Model.Title</span>
+            <span>Uploaded: @Model.CreatedOn</span>
+        </div>
+    </div>
+</div>
+
