@@ -61,7 +61,7 @@ namespace Notebook.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Sport sport)
+        public async Task<IActionResult> Add(Sport sport) 
         {
             if (ModelState.IsValid)
             { 
